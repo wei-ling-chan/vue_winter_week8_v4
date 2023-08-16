@@ -1,1 +1,0 @@
-import{_ as o,a as t,o as n,F as s,b as e}from"./index-f7d035f6.js";const c={},a=e("h1",null,"404",-1),r=e("p",null,"這頁找不到",-1);function _(l,d){return n(),t(s,null,[a,r],64)}const f=o(c,[["render",_]]);export{f as default};
