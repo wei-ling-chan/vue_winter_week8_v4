@@ -307,11 +307,16 @@
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
                   <div class="card mx-0 p-4 pb-0 rounded-0" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
-                    <img src="@/assets/img/opening.png" class="card-img-top w-100" alt="慶開幕" style="object-fit:contain ; object-position:center center;height:80% !important;" />
+                    <img src="@/assets/img/opening.png"
+                      class="card-img-top w-100" alt="慶開幕"
+                      style="object-fit:contain ; object-position:center center;height:80% !important;" />
                     <div class="card-body text-center">
                       <h5 class="card-title fw-bold text-dark">慶開幕</h5>
                       <p class="card-text text-dark">輸入優惠碼999全館打9折</p>
-                      <button type="btn btn-info" class="d-none rounded-circle position-absolute start-50 translate-middle" style="bottom: -30px;background-color: #b38282;color: white;">
+                      <button
+                        type="btn btn-info"
+                        class="d-none rounded-circle position-absolute start-50 translate-middle"
+                        style="bottom: -30px;background-color: #b38282;color: white;">
                         >
                       </button>
                     </div>
@@ -321,11 +326,15 @@
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
                   <div class="card  p-4 pb-0 rounded-0" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
-                    <img src="@/assets/img/news-pic1.jpg" class="card-img-top " alt="端午連假" style="object-fit:contain ; object-position:center center;height:80% !important;" />
+                    <img src="@/assets/img/news-pic1.jpg"
+                      class="card-img-top " alt="端午連假"
+                      style="object-fit:contain ; object-position:center center;height:80% !important;" />
                     <div class="card-body text-center">
                       <h5 class="card-title fw-bold text-dark">我們休息囉</h5>
                       <p class="card-text text-dark">這幾天老闆不上班</p>
-                      <button type="btn btn-info" class="d-none rounded-circle position-absolute start-50 translate-middle" style="bottom: -30px;background-color: #b38282;color: white;">
+                      <button type="btn btn-info"
+                        class="d-none rounded-circle position-absolute start-50 translate-middle"
+                        style="bottom: -30px;background-color: #b38282;color: white;">
                         >
                       </button>
                     </div>
@@ -334,12 +343,18 @@
               </SwiperSlide>
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
-                  <div class="card  p-4 pb-0 rounded-0" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
-                    <img src="@/assets/img/news-pic2.jpg" class="card-img-top " alt="日式擔仔麵" style="object-fit:contain ; object-position:center center;height:80% !important;" />
+                  <div class="card p-4 pb-0 rounded-0"
+                    style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+                    <img src="@/assets/img/news-pic2.jpg"
+                      class="card-img-top " alt="日式擔仔麵"
+                      style="object-fit:contain ; object-position:center center;height:80% !important;" />
                     <div class="card-body text-center">
                       <h5 class="card-title fw-bold text-dark">新品上市</h5>
                       <p class="card-text text-dark">日式擔仔麵趕快來嘗鮮</p>
-                      <button type="btn btn-info" class="d-none rounded-circle position-absolute start-50 translate-middle" style="bottom: -30px;background-color: #b38282;color: white;">
+                      <button
+                        type="btn btn-info"
+                        class="d-none rounded-circle position-absolute start-50 translate-middle"
+                        style="bottom: -30px;background-color: #b38282;color: white;">
                         >
                       </button>
                     </div>
@@ -348,12 +363,17 @@
               </SwiperSlide>
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
-                  <div class="card  p-4 pb-0 rounded-0" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
-                    <img src="@/assets/img/news-pic4.jpg" class="card-img-top " alt="南洋叻沙雞肉湯麵" style="object-fit:contain ; object-position:center center;height:80% !important;" />
+                  <div class="card  p-4 pb-0 rounded-0"
+                    style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+                    <img src="@/assets/img/news-pic4.jpg"
+                      class="card-img-top " alt="南洋叻沙雞肉湯麵"
+                      style="object-fit:contain ; object-position:center center;height:80% !important;" />
                     <div class="card-body text-center">
                       <h5 class="card-title fw-bold text-dark">新品上市</h5>
                       <p class="card-text text-dark">南洋雞肉叻沙湯麵</p>
-                      <button type="btn btn-info" class="d-none rounded-circle position-absolute start-50 translate-middle" style="bottom: -30px;background-color: #b38282;color: white;">
+                      <button type="btn btn-info"
+                        class="d-none rounded-circle position-absolute start-50 translate-middle"
+                        style="bottom: -30px;background-color: #b38282;color: white;">
                         >
                       </button>
                     </div>

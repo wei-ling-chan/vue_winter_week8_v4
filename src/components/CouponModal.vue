@@ -1,5 +1,11 @@
 <template>
-  <div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" ref="Modal">
+  <div class="modal fade"
+    id="couponModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    ref="Modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">

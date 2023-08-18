@@ -9,7 +9,13 @@
               <img src="@/assets/img/logo.png" class="logo" alt="麵鋪子" style="filter: brightness(0) saturate(0) invert(1);" />
             </RouterLink>
             <a class="logo navbar-brand d-none d-md-block" href="#" @click.prevent></a>
-            <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:1px solid white" @click="toggleCollapse">
+            <button
+              class="navbar-toggler"
+              type="button"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              style="border:1px solid white" @click="toggleCollapse">
               <i class="bi bi-list" style="color: white;"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" ref="collapse">

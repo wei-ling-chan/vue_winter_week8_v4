@@ -64,10 +64,16 @@
                 </div>
                 <div class="row justify-content-between mt-2">
                   <div class="input-group" style="width: 180px;">
-                    <button class="btn btn-outline-secondary rounded-start px-2" type="button" @click.prevent="reproductQty(-1)">
+                    <button
+                      class="btn btn-outline-secondary rounded-start px-2"
+                      type="button" @click.prevent="reproductQty(-1)">
                       <i class="bi bi-dash-lg"></i>
                     </button>
-                    <input type="button" class="form-control text-center" v-model="product.qty" placeholder="" aria-label="Example text with two button addons readonly">
+                    <input
+                      type="button"
+                      class="form-control text-center"
+                      v-model="product.qty"
+                      aria-label="Example text with two button addons readonly">
                     <button class="btn btn-outline-secondary rounded-end px-2" type="button" @click.prevent="reproductQty(1)">
                       <i class="bi bi-plus"></i>
                     </button>

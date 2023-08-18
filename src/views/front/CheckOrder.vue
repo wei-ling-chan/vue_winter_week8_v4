@@ -15,17 +15,46 @@
           <div class="progress" style="height: 1px;">
             <div class="progress-bar" role="progressbar" style="width: 100%;background-color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
           </div>
-          <button type="button" class="position-absolute bg-success text-light border border-dark top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">購物車</button>
-          <button type="button" class="position-absolute bg-success text-light boeder border-dark bg-0 top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">填寫訂單</button>
-          <button type="button" class="position-absolute  bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" style="width: 6rem; height:6rem;">完成訂單</button>
+          <button
+            type="button"
+            class="position-absolute bg-success text-light border border-dark top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+            style="width: 6rem; height:6rem;">
+            購物車
+          </button>
+          <button
+            type="button"
+            class="position-absolute bg-success text-light boeder border-dark bg-0 top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+            style="width: 6rem; height:6rem;">
+            填寫訂單
+          </button>
+          <button
+            type="button"
+            class="position-absolute bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+            style="width: 6rem; height:6rem;">
+            完成訂單
+          </button>
         </div>
         <div class="position-relative mx-auto m-4 mb-8" style="width: 50%;" v-if="order.is_paid">
           <div class="progress" style="height: 1px;">
             <div class="progress-bar" role="progressbar" style="width: 100%;background-color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
           </div>
-          <button type="button" class="position-absolute bg-success text-light border border-dark top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">購物車</button>
-          <button type="button" class="position-absolute bg-success text-light boeder border-dark bg-0 top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">填寫訂單</button>
-          <button type="button" class="position-absolute bg-success text-light top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" style="width: 6rem; height:6rem;">完成訂單</button>
+          <button
+            type="button"
+            class="position-absolute bg-success text-light border border-dark top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+            style="width: 6rem; height:6rem;">
+            購物車
+          </button>
+          <button
+            type="button"
+            class="position-absolute bg-success text-light boeder border-dark bg-0 top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+            style="width: 6rem; height:6rem;">
+            填寫訂單
+          </button>
+          <button type="button"
+            class="position-absolute bg-success text-light top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+            style="width: 6rem; height:6rem;">
+            完成訂單
+          </button>
         </div>
       </div>
       <div class="mx-auto mb-5 text-center" v-if="order.is_paid === true" style="margin-top: -5%;">
@@ -82,7 +111,10 @@
               <td class="text-center" style="color: #a64942;" v-if="order.total !==0">金額</td>
               <td class="text-center" style="color: #a64942;" v-if="order.total !==0">{{ totalSum }}</td>
               <td class="text-center" style="color: #a64942;" v-if="order.total ===0">總計</td>
-              <td class="text-center" style="color: #a64942;" v-if="order.total ===0" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">{{ totalSum-order.total }}</td>
+              <td class="text-center" style="color: #a64942;" v-if="order.total ===0"
+                :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">
+                {{ totalSum-order.total }}
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -144,10 +176,32 @@
       <div class="progress" style="height: 1px;">
         <div class="progress-bar" role="progressbar" style="width: 100%;background-color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
-      <button type="button" class="position-absolute bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 4rem; height:4rem;">購物車</button>
-      <button type="button" class="position-absolute boeder border-dark bg-success text-light top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 4rem; height:4rem;">填寫訂單</button>
-      <button type="button" class="position-absolute bg-success text-light top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" v-if="order.is_paid" style="width: 4rem; height:4rem;">完成訂單</button>
-      <button type="button" class="position-absolute bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" v-else style="width: 4rem; height:4rem;">完成訂單</button>
+      <button
+        type="button"
+        class="position-absolute bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+        style="width: 4rem; height:4rem;">
+        購物車
+      </button>
+      <button
+        type="button"
+        class="position-absolute boeder border-dark bg-success text-light top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+        style="width: 4rem; height:4rem;">
+        填寫訂單
+      </button>
+      <button
+        type="button"
+        class="position-absolute bg-success text-light top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+        v-if="order.is_paid"
+        style="width: 4rem; height:4rem;">
+        完成訂單
+      </button>
+      <button
+        type="button"
+        class="position-absolute bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+        v-else
+        style="width: 4rem; height:4rem;">
+        完成訂單
+      </button>
     </div>
     <div class="check-order-finish mx-auto mb-4 text-center" v-if="order.is_paid === true">
       <h1 class="mb-4">付款完成</h1>
@@ -205,7 +259,10 @@
             <td v-if="order.total ===0"></td>
             <td v-if="order.total ===0"></td>
             <td class="text-center" v-if="order.total ===0">總計</td>
-            <td class="text-center" v-if="order.total ===0" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">{{ totalSum-order.total }}</td>
+            <td class="text-center" v-if="order.total ===0"
+              :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">
+              {{ totalSum-order.total }}
+            </td>
           </tr>
         </tfoot>
       </table>

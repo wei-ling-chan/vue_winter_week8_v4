@@ -27,9 +27,15 @@
           <div class="d-none d-lg-block col-lg-3 left-menu">
             <div class="left-menu-block shadow me-4">
               <ul class="category-filter">
-                <li><button class="list-group-item select-all fw-bold" type="button" @click="filterNews('select-all')">全部</button></li>
-                <li><button class="list-group-item select-importent fw-bold" type="button" @click="filterNews('select-importent')">重要公告</button></li>
-                <li><button class="list-group-item select-newproduct fw-bold" type="button" @click="filterNews('select-newproduct')">新品上市</button></li>
+                <li>
+                  <button class="list-group-item select-all fw-bold" type="button" @click="filterNews('select-all')">全部</button>
+                </li>
+                <li>
+                  <button class="list-group-item select-importent fw-bold" type="button" @click="filterNews('select-importent')">重要公告</button>
+                </li>
+                <li>
+                  <button class="list-group-item select-newproduct fw-bold" type="button" @click="filterNews('select-newproduct')">新品上市</button>
+                </li>
               </ul>
             </div>
           </div>

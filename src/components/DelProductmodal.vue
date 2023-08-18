@@ -1,5 +1,11 @@
 <template>
-  <div id="delproductModalTemplate" ref="delproductModal" class="modal fade" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div
+    id="delproductModalTemplate"
+    ref="delproductModal"
+    class="modal fade"
+    tabindex="-1"
+    aria-labelledby="productModalLabel"
+    aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content border-0">
           <div class="modal-header bg-danger text-white">

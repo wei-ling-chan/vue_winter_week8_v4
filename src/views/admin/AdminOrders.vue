@@ -27,7 +27,12 @@
           <td class="text-right">{{ adminOrder.total }}</td>
           <td>
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" :id="`paidSwitch${adminOrder.id}`" v-model="adminOrder.is_paid" @change="updatePaid(adminOrder)" />
+              <input
+                class="form-check-input"
+                type="checkbox"
+                :id="`paidSwitch${adminOrder.id}`"
+                v-model="adminOrder.is_paid"
+                @change="updatePaid(adminOrder)" />
               <label class="form-check-label" :for="`paidSwitch${adminOrder.id}`">
                 <span v-if="adminOrder.is_paid">已付款</span>
                 <span v-else>未付款</span>

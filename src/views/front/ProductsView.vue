@@ -35,12 +35,16 @@
           <section class="tasty-menu text-center my-md-100 mt-5" data-aos="fade-right">
             <div class="row text-light justify-evenly justify-content-sm-center">
               <div class="col-lg-2 col-4">
-                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2 d-flex justify-content-center align-items-center" @click="filteredItems('')" :class="{ 'active': selectedItem === '全部商品' }">
+                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2 d-flex justify-content-center align-items-center"
+                  @click="filteredItems('')"
+                  :class="{ 'active': selectedItem === '全部商品' }">
                   <div>全部商品</div>
                 </div>
               </div>
               <div class="col-lg-2 col-4">
-                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2" @click="filteredItems('湯麵')" :class="{ 'active': selectedItem === '湯麵' }">
+                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2"
+                  @click="filteredItems('湯麵')"
+                  :class="{ 'active': selectedItem === '湯麵' }">
                   <div>
                     <img src="@/assets/img/chinese-food.png" alt="湯麵" />
                     <span class="d-block">湯麵</span>
@@ -48,7 +52,9 @@
                 </div>
               </div>
               <div class="col-lg-2 col-4">
-                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2" @click="filteredItems('涼麵')" :class="{ 'active': selectedItem === '涼麵' }">
+                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2"
+                @click="filteredItems('涼麵')"
+                :class="{ 'active': selectedItem === '涼麵' }">
                   <div>
                     <img src="@/assets/img/noodles2.png" alt="涼麵" />
                     <span class="d-block">涼麵</span>
@@ -56,7 +62,9 @@
                 </div>
               </div>
               <div class="col-lg-2 col-4">
-                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2" @click="filteredItems('炸物')" :class="{ 'active': selectedItem === '炸物' }">
+                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2"
+                  @click="filteredItems('炸物')"
+                  :class="{ 'active': selectedItem === '炸物' }">
                   <div>
                     <img src="@/assets/img/fried-chicken.png/" alt="炸物" />
                     <span class="d-block">炸物</span>
@@ -64,7 +72,9 @@
                 </div>
               </div>
               <div class="col-lg-2 col-4">
-                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2" @click="filteredItems('精緻小菜')" :class="{ 'active': selectedItem === '精緻小菜' }">
+                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2"
+                  @click="filteredItems('精緻小菜')"
+                  :class="{ 'active': selectedItem === '精緻小菜' }">
                   <div>
                     <img src="@/assets/img/skewer.png/" alt="精緻小菜" />
                     <span class="d-block">小菜</span>
@@ -72,7 +82,9 @@
                 </div>
               </div>
               <div class="col-lg-2 col-4">
-                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2" @click="filteredItems('湯品')" :class="{ 'active': selectedItem === '湯品' }">
+                <div class="tasty-menu-item border rounded-circle mx-auto mx-lg-3 my-2"
+                  @click="filteredItems('湯品')"
+                  :class="{ 'active': selectedItem === '湯品' }">
                   <div>
                     <img src="@/assets/img/soup.png/" alt="湯品" />
                     <span class="d-block">湯品</span>
@@ -83,7 +95,14 @@
           </section>
           <section class="tasty-list">
             <div class="d-flex justify-content-end mt-5 mt-md-7">
-              <input type="text" class="form-control form-search border-2 border-secondary" name="keyword" placeholder="搜尋產品" ref="serch" v-on:keydown.enter.prevent="handleMouseDown" style="width: 20%;">
+              <input
+                type="text"
+                class="form-control form-search border-2 border-secondary"
+                name="keyword"
+                placeholder="搜尋產品"
+                ref="serch"
+                v-on:keydown.enter.prevent="handleMouseDown"
+                style="width: 20%;">
               <button type="button" class="btn pe-md-0">
                 <i class="bi bi-search" @click="searchProduct"></i>
               </button>

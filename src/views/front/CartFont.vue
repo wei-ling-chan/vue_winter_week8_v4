@@ -14,9 +14,20 @@
         <div class="progress" style="height: 1px;">
           <div class="progress-bar" role="progressbar" style="width: 100%;background-color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"/>
         </div>
-        <button type="button" class="position-absolute bg-success text-light border border-dark top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">購物車</button>
-        <button type="button" class="position-absolute bg-success text-light boeder border-dark bg-0 top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">填寫訂單</button>
-        <button type="button" class="position-absolute  bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" style="width: 6rem; height:6rem;">完成訂單</button>
+        <button type="button" class="position-absolute bg-success text-light border border-dark top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 6rem; height:6rem;">
+          購物車
+        </button>
+        <button type="button"
+          class="position-absolute bg-success text-light boeder border-dark bg-0 top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 6rem; height:6rem;">
+          填寫訂單
+        </button>
+        <button type="button"
+          class="position-absolute bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+          style="width: 6rem; height:6rem;">
+          完成訂單
+        </button>
       </div>
       <!-- 購物流程結束 -->
       <div class="d-flex justify-content-start align-items-start">
@@ -70,7 +81,10 @@
               <td v-if="cart.total === cart.final_total" />
               <td v-if="cart.total === cart.final_total" />
               <td class="text-center" v-if="cart.total === cart.final_total">總計</td>
-              <td class="text-center" v-if="cart.total === cart.final_total" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">{{ cart.total }}</td>
+              <td class="text-center" v-if="cart.total === cart.final_total"
+                :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">
+                {{ cart.total }}
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -80,17 +94,42 @@
           <VForm ref="form" class="p-4" style="width: 95%;" v-slot="{ errors }">
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <VField id="email" name="email" type="email" class="form-control" :class="{ 'is-invalid': errors['email'] }" placeholder="請輸入 Email" rules="email|required" v-model="data.user.email"></VField>
+              <VField id="email"
+                name="email"
+                type="email"
+                class="form-control" :class="{ 'is-invalid': errors['email'] }"
+                placeholder="請輸入 Email"
+                rules="email|required"
+                v-model="data.user.email">
+              </VField>
               <ErrorMessage name="email" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="name" class="form-label">收件人姓名</label>
-              <VField id="name" name="姓名" type="text" class="form-control" :class="{ 'is-invalid': errors['姓名'] }" placeholder="請輸入姓名" rules="required" v-model="data.user.name"></VField>
+              <VField
+                id="name"
+                name="姓名"
+                type="text"
+                class="form-control"
+                :class="{ 'is-invalid': errors['姓名'] }"
+                placeholder="請輸入姓名"
+                rules="required"
+                v-model="data.user.name">
+              </VField>
               <ErrorMessage name="姓名" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="tel" class="form-label">收件人電話</label>
-              <VField id="tel" name="電話" type="text" class="form-control" :class="{ 'is-invalid': errors['電話'] }" placeholder="請輸入電話" rules="required|max:10|integer" v-model="data.user.tel"></VField>
+              <VField
+                id="tel"
+                name="電話"
+                type="text"
+                class="form-control"
+                :class="{ 'is-invalid': errors['電話'] }"
+                placeholder="請輸入電話"
+                rules="required|max:10|integer"
+                v-model="data.user.tel">
+              </VField>
               <ErrorMessage name="電話" class="invalid-feedback" />
             </div>
             <div class="mb-3">
@@ -108,7 +147,10 @@
               <div class="d-flex w-100">
                 <VDatePicker v-model="date" mode="dateTime" is24hr>
                   <template v-slot="{ inputValue, inputEvents }">
-                    <input ref="myInput" class="px-2 py-1 border border-dark rounded-0 rounded-start px-11 py-10 w-100 rounded focus:outline-none focus:border-blue-300" :value="inputValue" v-on="inputEvents" />
+                    <input ref="myInput"
+                      class="px-2 py-1 border border-dark rounded-0 rounded-start px-11 py-10 w-100 rounded focus:outline-none focus:border-blue-300"
+                      :value="inputValue"
+                      v-on="inputEvents" />
                   </template>
                 </VDatePicker>
                 <div class="px-2 py-1 border border-1 border-start-0 border-dark rounded-end" style="background-color: #e9ecef;">
@@ -146,11 +188,24 @@
       <!-- 購物流程開始 -->
       <div class="position-relative mx-auto m-5 mb-7" style="width: 70%;">
         <div class="progress" style="height: 1px;">
-          <div class="progress-bar" role="progressbar" style="width: 100%;background-color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
+          <div class="progress-bar" role="progressbar"
+            style="width: 100%;background-color:black;"
+            aria-valuenow="50"
+            aria-valuemin="0"
+            aria-valuemax="100" />
         </div>
-        <button type="button" class="position-absolute  bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 4rem; height:4rem;">購物車</button>
-        <button type="button" class="position-absolute boeder border-dark bg-success text-light top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 4rem; height:4rem;">填寫訂單</button>
-        <button type="button" class="position-absolute  bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" style="width: 4rem; height:4rem;">完成訂單</button>
+        <button type="button" class="position-absolute  bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 4rem; height:4rem;">
+          購物車
+        </button>
+        <button type="button" class="position-absolute boeder border-dark bg-success text-light top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 4rem; height:4rem;">
+          填寫訂單
+        </button>
+        <button type="button" class="position-absolute  bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+          style="width: 4rem; height:4rem;">
+          完成訂單
+        </button>
       </div>
       <!-- 購物流程結束 -->
       <div class="d-flex justify-content-start align-items-start px-11">
@@ -203,12 +258,22 @@
             </tbody>
             <tfoot>
               <tr>
-                <td class="text-center text-info" v-if="cart.total !== cart.final_total">已折扣:&nbsp;{{ Math.round(cart.total-cart.final_total) }}</td>
-                <td class="text-center" v-if="cart.total !== cart.final_total">金額</td>
-                <td class="text-center text-danger" v-if="cart.total !== cart.final_total">{{ Math.round(cart.final_total) }}</td>
+                <td class="text-center text-info" v-if="cart.total !== cart.final_total">
+                  已折扣:&nbsp;{{ Math.round(cart.total-cart.final_total) }}
+                </td>
+                <td class="text-center" v-if="cart.total !== cart.final_total">
+                  金額
+                </td>
+                <td class="text-center text-danger" v-if="cart.total !== cart.final_total">
+                  {{ Math.round(cart.final_total) }}
+                </td>
                 <td v-if="cart.total === cart.final_total" />
-                <td class="text-center" v-if="cart.total === cart.final_total">總計</td>
-                <td class="text-center" v-if="cart.total === cart.final_total" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">{{ cart.total }}</td>
+                <td class="text-center" v-if="cart.total === cart.final_total">
+                  總計
+                </td>
+                <td class="text-center" v-if="cart.total === cart.final_total" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">
+                  {{ cart.total }}
+                </td>
               </tr>
             </tfoot>
           </table>
@@ -221,17 +286,41 @@
           <VForm ref="form" class="p-4" style="width: 100%;" v-slot="{ errors }">
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <VField id="email" name="email" type="email" class="form-control" :class="{ 'is-invalid': errors['email'] }" placeholder="請輸入 Email" rules="email|required" v-model="data.user.email" />
+              <VField
+                id="email"
+                name="email"
+                type="email"
+                class="form-control"
+                :class="{ 'is-invalid': errors['email'] }"
+                placeholder="請輸入 Email"
+                rules="email|required"
+                v-model="data.user.email" />
               <ErrorMessage name="email" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="name" class="form-label">收件人姓名</label>
-              <VField id="name" name="姓名" type="text" class="form-control" :class="{ 'is-invalid': errors['姓名'] }" placeholder="請輸入姓名" rules="required" v-model="data.user.name" />
+              <VField
+              id="name"
+              name="姓名"
+              type="text"
+              class="form-control"
+              :class="{ 'is-invalid': errors['姓名'] }"
+              placeholder="請輸入姓名"
+              rules="required"
+              v-model="data.user.name" />
               <ErrorMessage name="姓名" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="tel" class="form-label">收件人電話</label>
-              <VField id="tel" name="電話" type="text" class="form-control" :class="{ 'is-invalid': errors['電話'] }" placeholder="請輸入電話" rules="required|max:10|integer" v-model="data.user.tel" />
+              <VField
+              id="tel"
+              name="電話"
+              type="text"
+              class="form-control"
+              :class="{ 'is-invalid': errors['電話'] }"
+              placeholder="請輸入電話"
+              rules="required|max:10|integer"
+              v-model="data.user.tel" />
               <ErrorMessage name="電話" class="invalid-feedback" />
             </div>
             <div class="mb-3">
@@ -249,10 +338,14 @@
               <div class="d-flex w-100">
                 <VDatePicker v-model="date" mode="dateTime" is24hr>
                   <template v-slot="{ inputValue, inputEvents }">
-                    <input ref="myInput" class="px-2 py-1 border border-dark rounded-0 rounded-start px-11 py-10 w-100 rounded focus:outline-none focus:border-blue-300" :value="inputValue" v-on="inputEvents" />
+                    <input ref="myInput"
+                      class="px-2 py-1 border border-dark rounded-0 rounded-start px-11 py-10 w-100 rounded focus:outline-none focus:border-blue-300"
+                      :value="inputValue"
+                      v-on="inputEvents" />
                   </template>
                 </VDatePicker>
-                <div class="px-2 py-1 border border-1 border-start-0 border-dark rounded-end" style="background-color: #e9ecef;">
+                <div class="px-2 py-1 border border-1 border-start-0 border-dark rounded-end"
+                  style="background-color: #e9ecef;">
                   <i class="bi bi-calendar-date text-dark fs-6"></i>
                 </div>
               </div>

@@ -7,9 +7,24 @@
         <div class="progress" style="height: 1px;">
           <div class="progress-bar" role="progressbar" style="width: 100%;background-color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
         </div>
-        <button type="button" class="position-absolute bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">購物車</button>
-        <button type="button" class="position-absolute boeder border-dark bg-0 text-dark top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 6rem; height:6rem;">填寫訂單</button>
-        <button type="button" class="position-absolute bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" style="width: 6rem; height:6rem;">完成訂單</button>
+        <button
+          type="button"
+          class="position-absolute bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 6rem; height:6rem;">
+          購物車
+        </button>
+        <button
+          type="button"
+          class="position-absolute boeder border-dark bg-0 text-dark top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 6rem; height:6rem;">
+          填寫訂單
+        </button>
+        <button
+          type="button"
+          class="position-absolute bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+          style="width: 6rem; height:6rem;">
+          完成訂單
+        </button>
       </div>
       <!-- 購物流程結束 -->
       <div class="container text-end px-md-0 my-4">
@@ -38,7 +53,8 @@
                         background-size:cover;
                         background-repeat: no-repeat;
                         background-position: center;
-                      " :style="{ backgroundImage: `url(${item.product.imageUrl})` }" class="cart-product cart-product-img rounded-3 mx-auto">
+                      " :style="{ backgroundImage: `url(${item.product.imageUrl})` }"
+                        class="cart-product cart-product-img rounded-3 mx-auto">
                 </div>
               </td>
               <td>
@@ -50,8 +66,15 @@
                   <button class="btn btn-outline-secondary rounded-start px-2" type="button" @click.prevent="updateCart(item,item.qty-1)">
                     <i class="bi bi-dash-lg"></i>
                   </button>
-                  <input type="text" class="form-control text-center" :value="item.qty" @change="updateCart(itemitem.qty)" placeholder="" aria-label="Example text with two button addons" readonly />
-                  <button class="btn btn-outline-secondary rounded-end px-2" type="button" @click.prevent="updateCart(item,item.qty+1)">
+                  <input type="text"
+                    class="form-control text-center"
+                    :value="item.qty"
+                    @change="updateCart(itemitem.qty)"
+                    aria-label="Example text with two button addons" readonly />
+                  <button
+                    class="btn btn-outline-secondary rounded-end px-2"
+                    type="button"
+                    @click.prevent="updateCart(item,item.qty+1)">
                     <i class="bi bi-plus"></i>
                   </button>
                 </div>
@@ -61,7 +84,11 @@
                 <div class="text-center" v-if="item.total === item.final_total">NT$&nbsp;{{ item.total }}</div>
               </td>
               <td class="text-center">
-                <button type="button" class="btn btn-outline-danger btn-sm" @click.prevent="deleteCartItem(item)" :disabled="lodingItem === item.id">
+                <button
+                  type="button"
+                  class="btn btn-outline-danger btn-sm"
+                  @click.prevent="deleteCartItem(item)"
+                  :disabled="lodingItem === item.id">
                   <i class="bi bi-trash3 fs-7"></i>
                   <i class="fas fa-spinner fa-pulse" v-if="lodingItem === item.id"></i>
                 </button>
@@ -75,7 +102,11 @@
             <td class="text-end" style="border:0;" />
             <td style="border:0;" />
             <td class="text-center" style="border:0;">總計</td>
-            <td class="text-center" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }" style="border:0;">NT$&nbsp;{{ cart.total }}</td>
+            <td class="text-center"
+              :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }"
+              style="border:0;">
+              NT$&nbsp;{{ cart.total }}
+            </td>
           </tr>
           <tr v-if="cart.total !== cart.final_total" class="fs-md">
             <td class="text-end" />
@@ -90,7 +121,13 @@
       <div class="container px-md-0">
         <div class="input-group input-group-sm coupon mt-5">
           <div class="col-xl-3 col-md-3 me-2">
-            <input ref="coupon_input" type="text" class="form-control me-3 rounded-3 fs-md" v-model="coupon_code" :disabled="couponApplied" placeholder="請輸入優惠碼" />
+            <input
+              ref="coupon_input"
+              type="text"
+              class="form-control me-3 rounded-3 fs-md"
+              v-model="coupon_code"
+              :disabled="couponApplied"
+              placeholder="請輸入優惠碼" />
           </div>
           <div class="col-xl-3 col-md-3">
             <div class="input-group-append">
@@ -128,11 +165,32 @@
       <!-- 購物流程開始 -->
       <div class="position-relative mx-auto m-5 mb-7" style="width: 70%;">
         <div class="progress" style="height: 1px;">
-          <div class="progress-bar" role="progressbar" style="width: 100%;background-color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 100%;background-color:black;"
+            aria-valuenow="50"
+            aria-valuemin="0"
+            aria-valuemax="100" />
         </div>
-        <button type="button" class="position-absolute  bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 4rem; height:4rem;">購物車</button>
-        <button type="button" class="position-absolute boeder border-dark bg-0 text-dark top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7" style="width: 4rem; height:4rem;">填寫訂單</button>
-        <button type="button" class="position-absolute  bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7" style="width: 4rem; height:4rem;">完成訂單</button>
+        <button
+          type="button"
+          class="position-absolute bg-success text-white top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 4rem; height:4rem;">
+          購物車
+        </button>
+        <button
+          type="button"
+          class="position-absolute boeder border-dark bg-0 text-dark top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill fs-7"
+          style="width: 4rem; height:4rem;">
+          填寫訂單
+        </button>
+        <button
+          type="button"
+          class="position-absolute bg-primary text-dark top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill fs-7"
+          style="width: 4rem; height:4rem;">
+          完成訂單
+        </button>
       </div>
       <!-- 購物流程結束 -->
       <table class="table align-middle">
@@ -209,11 +267,20 @@
       <div class="d-flex flex-column align-items-betw input-group input-group-sm coupon">
         <div class="d-flex justify-content-between mt-1 mb-3">
           <div class="col-8 col-xl-3 col-md-12 me-2">
-            <input ref="coupon_input" type="text" class="form-control me-3 rounded-3 fs-md-8 molbile-size" v-model="coupon_code" :disabled="couponApplied" placeholder="請輸入優惠碼" />
+            <input
+              ref="coupon_input"
+              type="text"
+              class="form-control me-3 rounded-3 fs-md-8 molbile-size"
+              v-model="coupon_code"
+              :disabled="couponApplied"
+              placeholder="請輸入優惠碼" />
           </div>
           <div class="col-xl-3 col-md-12">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary fs-md-6 rounded-3 molbile-size" type="button" :disabled="couponApplied" @click="addCouponCode">
+              <button class="btn btn-outline-secondary fs-md-6 rounded-3 molbile-size"
+                type="button"
+                :disabled="couponApplied"
+                @click="addCouponCode">
                 {{ couponApplied ? '優惠碼已套用' : '套用優惠碼' }}
               </button>
             </div>
