@@ -1,0 +1,143 @@
+.about{  
+  .banner-about{
+    background-image: url(../img/about-banner.png);
+  } 
+  .about-focus{    
+    .about-focus-img1{
+      width: 48px;
+    }
+    .title-line{      
+      display: table;
+      width: auto;
+      white-space: nowrap;      
+    }
+    .title-line::after,.title-line::before{
+      display: table-cell;
+      content: "";
+      width: 40%;
+      background: linear-gradient(black, black) repeat-x center;      
+      background-size: 0.1rem 0.1rem;
+    }
+    .rectangle{      
+      background-color:#427D53 ;
+      width: 3vw;
+      min-width: 30px;
+      height: 100px;
+    }
+    h3{
+      writing-mode: vertical-lr;
+    }
+    p{
+      font-size: 20px;
+    }
+    .focus-img{
+      img{
+        width: 100%;
+        max-height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+        object-position: center;         
+        height: 397px; 
+      }
+    }
+    @media (max-width:767.98px) {
+      h3{
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+      }
+      .rectangle{      
+        width: 30px;
+        height: 80px;
+      }
+    }
+  }
+  .about-delicious{
+    h1{
+      writing-mode: vertical-lr;
+    }    
+    img{
+      border-radius: 20px;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center; 
+    }
+    .about-delicious-img1{
+      width:48px;
+    }
+    .title-line{      
+      display: table;
+      width: auto;
+      white-space: nowrap;      
+    }
+    .title-line::after,.title-line::before{
+      display: table-cell;
+      content: "";
+      width: 50%;
+      background: linear-gradient(black, black) repeat-x center;      
+      background-size: 0.1rem 0.1rem;
+    }
+    .about-delicious-seal{
+      width: 85px;
+    }
+    p{
+      font-size: 20px;
+    }
+  }   
+  .about-mobile{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    color: #664E22;    
+  }
+  
+  /*RWD*/
+  
+  @include media-breakpoint-down(md) {   
+    .about{      
+      .about-focus{
+        h2{
+         font-size: 30px;
+        }
+        .about-focus-img1{
+          width: 24px;
+        }
+        h3{
+          writing-mode: horizontal-tb;
+           margin-left: 0;
+          font-size: 24px;
+          font-weight: bold;           
+        }
+        p{
+          font-size:18px ;
+        }
+      }
+      .about-delicious{
+        h1{
+          writing-mode: horizontal-tb;
+        }
+        h2{
+          font-size: 30px;       
+        }
+        .about-delicious-img1{
+          width: 24px;
+        }
+        p{
+          font-size: 20px;
+        }
+      }
+    }
+   }
+  
+   @include media-breakpoint-down(lg){   
+    .about{      
+      .about-delicious{
+        .about-delicious-creative{
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+      }
+    }
+   }   
+}

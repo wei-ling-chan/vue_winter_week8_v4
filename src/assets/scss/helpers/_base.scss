@@ -1,0 +1,98 @@
+body{   
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height: 1.5;  
+  
+  a{
+    text-decoration: none;
+  }
+  ul{
+    list-style-type: none;
+  }  
+  div{
+    background-size: cover;
+    background-position: center center;
+  }
+  img{
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+  }  
+  .container{
+    padding: 0 12px;
+  } 
+}
+
+// common
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -3px 10px 15px -3px rgba(0,0,0,0.1);
+  border-radius: 1rem;   
+  .slide-img{
+    overflow: hidden;    
+  }   
+  &:hover .slide-img{            
+    transform: scale(1.2);
+    transition: all 2s;
+  }    
+  .slide-img{        
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;       
+  } 
+}
+.heart{
+  z-index: 2;   
+  color: red;
+  &:hover{
+    color: $danger;    
+  } 
+}
+.text-subPrice{
+  color: #c3c3c3 !important;
+}
+.swiper-overflow{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slide-img {    
+  width: 100%;
+  object-fit: cover;
+  object-position: center;     
+  aspect-ratio: 16/11;      
+}
+.text-img{
+  object-fit:contain;
+}
+.tasty-menu-fixed{  
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  .bi-arrow-up::before {
+    color: white;
+    font-size: 25px;       
+  }    
+  display: none; 
+  position: fixed;
+  bottom: 5%;
+  right: 1%;       
+  border-radius: 10px; 
+  z-index: 9999;
+  img{      
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;     
+  }
+  .tasty-menu-item{
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    background-color: $info;
+    &:hover{
+      background-color: black;
+    } 
+  }       
+}
+.tasty-menu-fixed.show{
+  display: block;
+}
