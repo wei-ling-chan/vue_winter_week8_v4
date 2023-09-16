@@ -63,13 +63,13 @@
               </td>
               <td>
                 <div class="input-group mx-auto cart-amount">
-                  <button class="btn btn-outline-secondary rounded-start px-2" type="button" @click.prevent="updateCart(item,item.qty-1)">
+                  <button class="btn btn-outline-secondary rounded-start px-2" type="button" @click.prevent="updateCart(item,item.qty-1)" :disabled="item.qty === 1">
                     <i class="bi bi-dash-lg"></i>
                   </button>
                   <input type="text"
                     class="form-control text-center"
                     :value="item.qty"
-                    @change="updateCart(itemitem.qty)"
+                    @change="updateCart(item,item.qty)"
                     aria-label="Example text with two button addons" readonly />
                   <button
                     class="btn btn-outline-secondary rounded-end px-2"
@@ -124,23 +124,23 @@
             <input
               ref="coupon_input"
               type="text"
-              class="form-control me-3 rounded-3 fs-md"
+              class="form-control me-3 rounded-3 fs-8"
               v-model="coupon_code"
               :disabled="couponApplied"
               placeholder="請輸入優惠碼" />
           </div>
           <div class="col-xl-3 col-md-3">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary rounded-3 fs-md" type="button" :disabled="couponApplied" @click="addCouponCode">
+              <button class="btn btn-outline-secondary rounded-3 fs-8" type="button" :disabled="couponApplied" @click="addCouponCode">
                 {{ couponApplied ? '優惠碼已套用' : '套用優惠碼' }}
               </button>
             </div>
           </div>
           <div class="d-flex ms-auto">
-            <button type="button" class="btn btn-dark rounded-3 fs-md">
-              <RouterLink to="/products" class="nav-link">繼續購物</RouterLink>
+            <button type="button" class="btn btn-dark rounded-3 fs-8">
+              <RouterLink to="/products" class="nav-link fs-8">繼續購物</RouterLink>
             </button>
-            <button type="button" class="btn btn-info ms-4 rounded-3 text-white fs-md" @click.prevent="nextCart">下一步</button>
+            <button type="button" class="btn btn-info ms-4 rounded-3 text-white fs-8" @click.prevent="nextCart">下一步</button>
           </div>
         </div>
         <template v-if="reEnter">
@@ -155,7 +155,7 @@
         <img src="@/assets/img/eat-noodle.png" class="d-block d-md-none mx-auto" alt="趕快去購買喔!" style="width: 400px;height:400px;" />
         <h1 class="h5 text-center mb-4 fw-normal">購物車還沒有任何商品喔!</h1>
       </div>
-      <button type="button" class="btn btn-dark rounded-0 margin-auto">
+      <button type="button" class="btn btn-dark margin-auto">
         <RouterLink to="/products" class="nav-link">繼續購物</RouterLink>
       </button>
     </div>
@@ -221,7 +221,7 @@
                     <div class="text-success d-none fs-7" v-if="item.coupon">已套用</div>
                   </div>
                   <div class="input-group input-group-sm">
-                    <select name="" id="" class="form-select" v-model="item.qty" @change="updateCart(item)" :disabled="lodingItem === item.id">
+                    <select name="" id="" class="form-select" v-model="item.qty" @change="updateCart(item,item.qty)" :disabled="lodingItem === item.id">
                       <option :value="i" v-for="i in 20" :key="i+'45621'">{{ i }}</option>
                     </select>
                   </div>
@@ -270,14 +270,14 @@
             <input
               ref="coupon_input"
               type="text"
-              class="form-control me-3 rounded-3 fs-md-8 molbile-size"
+              class="form-control me-3 rounded-3 fs-8 molbile-size"
               v-model="coupon_code"
               :disabled="couponApplied"
               placeholder="請輸入優惠碼" />
           </div>
           <div class="col-xl-3 col-md-12">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary fs-md-6 rounded-3 molbile-size"
+              <button class="btn btn-outline-secondary fs-8 rounded-3 molbile-size"
                 type="button"
                 :disabled="couponApplied"
                 @click="addCouponCode">
@@ -306,8 +306,10 @@
 <script>
 import { mapActions, mapState } from 'pinia'
 import cartStore from '../../store/cartStore.js'
+import Swal from 'sweetalert2'
 import Toast from '@/methods/toasts.js'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   data () {
     return {
@@ -361,45 +363,93 @@ export default {
     // 刪除單一品項購物車
     deleteCartItem (item) {
       this.lodingItem = item.id
-      this.$http.delete(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart/${item.id}`)
-        .then(response => {
-          Toast.fire({
-            width: 250,
-            title: response.data.message,
-            icon: 'success'
-          })
-          this.lodingItem = ''
-          this.getCart()
-        })
-        .catch((error) => {
-          Toast.fire({
-            width: 250,
-            title: error.response.data.message,
-            icon: 'error'
-          })
+      Swal.mixin({
+        icon: 'warning',
+        toast: true,
+        backdrop: true,
+        allowOutsideClick: false,
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: '刪除',
+        cancelButtonText: '取消',
+        confirmButtonColor: '#ff0000', // 確認按鈕的顏色
+        cancelButtonColor: '#1b1b1b', // 取消按鈕的顏色
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+        .fire({
+          title: `是否要刪除<span style="color: #7b7d42cc"> ${item.product.title} </span>？`
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.$http.delete(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart/${item.id}`)
+              .then(response => {
+                this.lodingItem = ''
+                this.getCart()
+                Swal.fire({
+                  toast: true,
+                  title: `已刪除<span style="color: #7b7d42cc"> ${item.product.title} </span>`,
+                  icon: 'success',
+                  position: 'top',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+              })
+              .catch((error) => {
+                Toast.fire({
+                  width: 250,
+                  title: error.response.data.message,
+                  icon: 'error'
+                })
+                this.lodingItem = ''
+              })
+          }
           this.lodingItem = ''
         })
     },
     // 刪除全部品項購物車
     deleteCartAll () {
       this.lodingItem = '123'
-      this.$http.delete(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/carts`)
-        .then(response => {
-          Toast.fire({
-            width: 250,
-            title: response.data.message,
-            icon: 'success'
-          })
-          this.lodingItem = ''
-          this.getCart()
-        })
-        .catch((err) => {
-          Toast.fire({
-            width: 250,
-            title: err.response.data.message,
-            icon: 'error'
-          })
-          this.lodingItem = ''
+      Swal.mixin({
+        icon: 'warning',
+        toast: true,
+        backdrop: true,
+        allowOutsideClick: false,
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: '刪除',
+        cancelButtonText: '取消',
+        confirmButtonColor: '#ff0000', // 確認按鈕的顏色
+        cancelButtonColor: '#1b1b1b', // 取消按鈕的顏色
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+        .fire({
+          title: '是否要刪除<span style="color: #7b7d42cc"> 全部商品 </span>？'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.$http.delete(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/carts`)
+              .then(response => {
+                Toast.fire({
+                  width: 250,
+                  title: '已刪除<span style="color: #7b7d42cc"> 全部商品 </span>',
+                  icon: 'success'
+                })
+                this.lodingItem = ''
+                this.getCart()
+              })
+              .catch((err) => {
+                Toast.fire({
+                  width: 250,
+                  title: err.response.data.message,
+                  icon: 'error'
+                })
+                this.lodingItem = ''
+              })
+          }
         })
     },
     // 結帳

@@ -28,19 +28,17 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   box-shadow: -3px 10px 15px -3px rgba(0,0,0,0.1);
   border-radius: 1rem;   
-  .slide-img{
-    overflow: hidden;    
+  .slide-img{   
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;        
   }   
   &:hover .slide-img{            
     transform: scale(1.2);
-    transition: all 2s;
-  }    
-  .slide-img{        
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;       
-  } 
+    transition: all 2s;       
+  }  
 }
 .heart{
   z-index: 2;   

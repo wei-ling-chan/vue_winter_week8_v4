@@ -22,6 +22,7 @@
 import { mapActions } from 'pinia'
 import SweetAlert from '@/store/SweetAlert.js'
 const { VITE_APP_URL } = import.meta.env
+
 export default {
   data () {
     return {

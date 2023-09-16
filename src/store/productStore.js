@@ -2,7 +2,6 @@ import { defineStore } from 'pinia'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
 
 export default defineStore('productStore', {
-
   state: () => ({
     products: []
   }),
@@ -19,5 +18,4 @@ export default defineStore('productStore', {
       return products
     }
   }
-
 })

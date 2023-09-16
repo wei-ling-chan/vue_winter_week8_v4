@@ -58,7 +58,7 @@
                       <span class="fs-1" style="font-weight:700">{{ item.title }}</span>
                     </div>
                     <div class="d-flex flex-column-reverse head-tags pb-3 pb-lg-0">
-                      <span class="btn btn-sm text-light bg-danger fs-6 shadow">新品上市</span>
+                      <span class="btn btn-sm text-light bg-danger fs-6">新品上市</span>
                     </div>
                   </div>
                   <div class="content-date text-end mb-3 mt-n2">2023.5.1</div>
@@ -83,6 +83,7 @@
 </template>
 <script>
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   data () {
     return {
@@ -100,9 +101,7 @@ export default {
         .then((res) => {
           this.products = res.data.products
           this.isLoading = false
-          this.newsProducts = this.products.filter((item) => {
-            return item.title === '日式擔仔麵' || item.title === '椒香湯拌麵'
-          })
+          this.newsProducts = this.products.filter((item) => { return item.title === '日式擔仔麵' || item.title === '椒香湯拌麵' })
         })
     },
     filterNews (state) {

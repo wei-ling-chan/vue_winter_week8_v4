@@ -108,8 +108,7 @@
     position: absolute;
     top: 45% !important;           
   }
- }
-
+}
 @include media-breakpoint-down(sm) {
   .tastyDetail{
     .tastyDetail-breadcrumb-list,.tastyDetail-product-item{

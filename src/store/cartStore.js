@@ -2,8 +2,8 @@ import axios from 'axios'
 import { defineStore } from 'pinia'
 import Toast from '@/methods/toasts.js'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
-export default defineStore('cart', {
 
+export default defineStore('cart', {
   state: () => ({
     storeCarts: [],
     cart: {},

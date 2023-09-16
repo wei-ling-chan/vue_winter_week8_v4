@@ -18,7 +18,7 @@
                   </a>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
-                  <div class="card-text text-md end tasty-item-price text-info fs-6" style="font-weight: 700;">特價NT$&nbsp;{{ product.price }}</div>
+                  <div class="card-text text-md end tasty-item-price text-info fs-6" style="font-weight: 700;">NT$&nbsp;{{ product.price }}</div>
                   <div class="card-text text-md end fs-7" style="color: #c3c3c3;">
                     <span class="text-decoration-line-through">NT$&nbsp;{{ product.origin_price }}</span>
                   </div>
@@ -44,6 +44,7 @@
 import { mapActions } from 'pinia'
 import cartStore from '../../store/cartStore.js'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   data () {
     return {

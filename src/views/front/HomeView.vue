@@ -12,19 +12,19 @@
         :slidesPerView="1"
         :autoHeight="true"
         :effect="'fade'"
-        :autoplay="{delay: 10000}"
+        :autoplay="{ delay: 10000 }"
         :centeredSlides="true"
         :loop="true"
-        :navigation="{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'}"
+        :navigation="{ nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev' }"
         :modules="modules" class="mySwiper" style="width: 100%;" @slideChange="playAnimation">
         <SwiperSlide>
           <section class="banner banner-1 anima position-relative pt-3 pb-6 mb-36 mb-md-100">
              <!-- 電腦版 -->
             <div class="banner-title position-absolute d-none d-md-block" style="right: 12%; top: 18%;">
               <img src="@/assets/img/banner/banner_home1titleseal.png" alt="用心製麵" style="width: 100px;" />
-              <div class="d-flex align-items-center position-absolute banner-more">
+              <div class="d-flex align-items-center position-absolute banner-more rounded-3">
                 <RouterLink to="/products">
-                  <div class="banner-more-btn btn btn-outline-light rounded-0">
+                  <div class="banner-more-btn btn btn-outline-light rounded-2">
                     <div>前往訂餐</div>
                     <i class="fa-solid fa-arrow-right-long fs-6"></i>
                   </div>
@@ -35,9 +35,9 @@
             <div class="banner-title position-absolute d-block d-md-none" style="right: 12%; top: 18%;width: 75%;">
               <img src="@/assets/img/banner/banner-phone-home1test.png" alt="用心製麵" />
             </div>
-            <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark">
+            <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark rounded-3">
               <RouterLink to="/products">
-                <div class="banner-more-btn btn btn-outline-light rounded-0 border-0">
+                <div class="banner-more-btn btn btn-outline-light rounded-2 border-0">
                   <div class="d-inline-block">前往訂餐&nbsp;</div>
                   <i class="fa-solid fa-arrow-right-long fs-6"></i>
                 </div>
@@ -59,9 +59,9 @@
           <section class="banner banner-2 position-relative pt-3 pb-6 mb-36 mb-md-100">
             <div class="banner-title position-absolute" style="left: 16%;top: 15%;">
               <img src="@/assets/img/banner/banner_home2title.png" alt="新品上市" style="width: 100px;" />
-              <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark">
+              <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark rounded-3">
                 <RouterLink to="/products">
-                  <div class="banner-more-btn btn btn-outline-light rounded-0 border-0">
+                  <div class="banner-more-btn btn btn-outline-light rounded-2 border-0">
                     <div>前往訂餐</div>
                     <i class="fa-solid fa-arrow-right-long fs-6"></i>
                   </div>
@@ -82,9 +82,9 @@
             </div>
             <div class="banner-info position-absolute" style="top: 33%;left: 17%;">
               <img src="@/assets/img/banner/banner_home3contant.png" alt="優質食材" style="width: 80px;" />
-              <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark">
+              <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark rounded-3">
                 <RouterLink to="/products">
-                  <div class="banner-more-btn btn btn-outline-dark rounded-0 border-0">
+                  <div class="banner-more-btn btn btn-outline-dark rounded-2 border-0">
                     <div>前往訂餐</div>
                     <i class="fa-solid fa-arrow-right-long fs-6"></i>
                   </div>
@@ -99,9 +99,9 @@
           <section class="banner banner-4 position-relative pt-3 pb-6 mb-36 mb-md-100">
             <div class="banner-title position-absolute" style="left:18%;top:23%;">
               <img src="@/assets/img/banner/banner_home4title.png" alt="極致醬料" style="width: 110px;" />
-              <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark">
+              <div class="d-flex align-items-center position-absolute banner-more border border-1 border-dark rounded-3">
                 <RouterLink to="/products">
-                  <div class="banner-more-btn btn btn-outline-light rounded-0 border-0">
+                  <div class="banner-more-btn btn btn-outline-light rounded-2 border-0">
                     <div>前往訂餐</div>
                     <i class="fa-solid fa-arrow-right-long fs-6"></i>
                   </div>
@@ -125,25 +125,25 @@
         <div class="row g-0">
           <RouterLink to="/products" class=" product-catena-item col-12 col-md-6 d-block text-center" data-aos="fade-up">
             <div class="img-hover">
-              <div class="bg-1 product-hover border border-3 border-dark" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
+              <div class="bg-1 product-hover border border-3 border-dark rounded-3" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
             </div>
             <h4 class="text-center pt-2 pb-4 fw-bold">涼麵系列</h4>
           </RouterLink>
           <RouterLink to="/products" class=" product-catena-item col-12 col-md-6 text-center">
             <div class="img-hover">
-              <div class="bg-2 product-hover border border-3 border-dark" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
+              <div class="bg-2 product-hover border border-3 border-dark rounded-3" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
             </div>
             <h4 class="text-center pt-2 pb-4 fw-bold">湯麵系列</h4>
           </RouterLink>
           <RouterLink to="/products" class="product-catena-item col-12 col-md-6 text-center">
             <div class="img-hover">
-              <div class="bg-3 product-hover border border-3 border-dark" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
+              <div class="bg-3 product-hover border border-3 border-dark rounded-3" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
             </div>
             <h4 class="text-center pt-2 pb-4 fw-bold">炸物系列</h4>
           </RouterLink>
           <RouterLink to="/products" class="product-catena-item col-12 col-md-6 text-center">
             <div class="img-hover">
-              <div class="bg-4 product-hover border border-3 border-dark" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
+              <div class="bg-4 product-hover border border-3 border-dark rounded-3" style="width: 99%; padding-bottom: 78%;" data-aos="zoom-in" />
             </div>
             <h4 class="text-center pt-2 pb-4 fw-bold">小菜系列</h4>
           </RouterLink>
@@ -164,7 +164,7 @@
           <div class="d-flex flex-wrap justify-content-center text-light ms-md-7 mt-6 mb-4 fs-5">
             <p>純釀醬油、花椒、八角。</p>&nbsp;
             <p>完美搭配、爽口不膩</p>
-            <RouterLink to="/products" type="button" class="new-produc-btn btn btn-outline-primary rounded-0 w-25 mt-4">了解更多</RouterLink>
+            <RouterLink to="/products" type="button" class="new-produc-btn btn btn-outline-primary w-25 mt-4">了解更多</RouterLink>
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@
             :autoHeight="true"
             :centeredSlides="false"
             :loop="true"
-            :navigation="{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'}"
+            :navigation="{ nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev' }"
             :modules="modules" class="hotSwiper"
             :breakpoints="{0: {
               slidesPerView: 1,spaceBetween: 10,},
@@ -204,7 +204,7 @@
               <RouterLink :to="`/product/${ item.id }`" class="card position-relative h-100 justify-content-between text-dark">
                 <div class="slide-hover w-100 overflow-hidden">
                   <span class="badge bg-info position-absolute fs-6">熱門</span>
-                  <div class="slide-img mt-auto rounded-0" :style="{ backgroundImage: `url(${ item.imageUrl })`}">
+                  <div class="slide-img mt-auto rounded-0" :style="{ backgroundImage: `url(${ item.imageUrl })` }">
                   </div>
                 </div>
                 <div class="card-body w-100">
@@ -216,7 +216,7 @@
                           </a>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                          <div class="card-text text-md end tasty-item-price text-info fw-bolder fs-6">特價NT$&nbsp;{{ item.price }}</div>
+                          <div class="card-text text-md end tasty-item-price text-info fw-bolder fs-6">NT$&nbsp;{{ item.price }}</div>
                           <div class="card-text text-dark text-md end fs-7 text-subPrice">&nbsp;
                             <span class="text-decoration-line-through"> NT$ {{ item.origin_price }}</span>
                           </div>
@@ -306,7 +306,7 @@
               class="news-swiper-son" ref="news-swiper-son">
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
-                  <div class="card mx-0 p-4 pb-0 rounded-0" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+                  <div class="card mx-0 p-4 pb-0 rounded-4" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
                     <img src="@/assets/img/opening.png"
                       class="card-img-top w-100" alt="慶開幕"
                       style="object-fit:contain ; object-position:center center;height:80% !important;" />
@@ -325,7 +325,7 @@
               </SwiperSlide>
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
-                  <div class="card  p-4 pb-0 rounded-0" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+                  <div class="card p-4 pb-0 rounded-4" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
                     <img src="@/assets/img/news-pic1.jpg"
                       class="card-img-top " alt="端午連假"
                       style="object-fit:contain ; object-position:center center;height:80% !important;" />
@@ -343,7 +343,7 @@
               </SwiperSlide>
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
-                  <div class="card p-4 pb-0 rounded-0"
+                  <div class="card p-4 pb-0 rounded-4"
                     style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
                     <img src="@/assets/img/news-pic2.jpg"
                       class="card-img-top " alt="日式擔仔麵"
@@ -413,6 +413,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 import 'swiper/css/effect-fade'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   data () {
     return {

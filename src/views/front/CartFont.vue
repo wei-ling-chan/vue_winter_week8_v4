@@ -31,10 +31,10 @@
       </div>
       <!-- 購物流程結束 -->
       <div class="d-flex justify-content-start align-items-start">
-        <table class="table align-middle border border-dark order-contents" style="width: 50%;">
+        <table class="table order-content-table align-middle border border-dark order-contents" style="width: 50%;">
           <thead>
             <tr class="table-dark text-center fs-md">
-              <th colspan="4">訂單內容</th>
+              <th colspan="4" class="order-content-title">訂單內容</th>
             </tr>
             <tr class="text-center fs-md">
               <th class="table-image">商品</th>
@@ -78,10 +78,10 @@
               <td class="text-center text-info" v-if="cart.total !== cart.final_total">{{ Math.round(cart.total-cart.final_total) }}</td>
               <td class="text-center" v-if="cart.total !== cart.final_total">金額</td>
               <td class="text-center text-danger" v-if="cart.total !== cart.final_total">{{ Math.round(cart.final_total) }}</td>
-              <td v-if="cart.total === cart.final_total" />
-              <td v-if="cart.total === cart.final_total" />
-              <td class="text-center" v-if="cart.total === cart.final_total">總計</td>
-              <td class="text-center" v-if="cart.total === cart.final_total"
+              <td v-if="cart.total === cart.final_total" class="border-bottom-0"/>
+              <td v-if="cart.total === cart.final_total" class="border-bottom-0"/>
+              <td class="text-center border-bottom-0" v-if="cart.total === cart.final_total">總計</td>
+              <td class="text-center border-bottom-0" v-if="cart.total === cart.final_total"
                 :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">
                 {{ cart.total }}
               </td>
@@ -89,8 +89,8 @@
           </tfoot>
         </table>
         <!-- 表單驗證開始 -->
-        <div class=" d-flex flex-column align-items-center ms-4 mb-9 border border-1 border-dark information" style="width: 49%;">
-          <div class="text-center p-2 bg-dark text-white w-100 information-title fs-md">填寫資訊</div>
+        <div class=" d-flex flex-column align-items-center ms-4 mb-9 border border-1 border-dark information rounded-3" style="width: 49%;">
+          <div class="text-center p-2 bg-dark text-white w-100 information-title fs-md rounded-top">填寫資訊</div>
           <VForm ref="form" class="p-4" style="width: 95%;" v-slot="{ errors }">
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
@@ -210,10 +210,10 @@
       <!-- 購物流程結束 -->
       <div class="d-flex justify-content-start align-items-start px-11">
         <div class="container px-0">
-          <table class="table align-middle border border-1 border-dark">
+          <table class="table order-content-table align-middle border border-1 border-dark">
             <thead>
               <tr class="table-dark text-center">
-                <th colspan="4">訂單內容</th>
+                <th colspan="4" class="order-content-title">訂單內容</th>
               </tr>
               <tr>
                 <th class="text-center">商品</th>
@@ -267,11 +267,11 @@
                 <td class="text-center text-danger" v-if="cart.total !== cart.final_total">
                   {{ Math.round(cart.final_total) }}
                 </td>
-                <td v-if="cart.total === cart.final_total" />
-                <td class="text-center" v-if="cart.total === cart.final_total">
+                <td class="border-bottom-0" v-if="cart.total === cart.final_total" />
+                <td class="text-center border-bottom-0" v-if="cart.total === cart.final_total">
                   總計
                 </td>
-                <td class="text-center" v-if="cart.total === cart.final_total" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">
+                <td class="text-center border-bottom-0" v-if="cart.total === cart.final_total" :class="{ 'text-decoration-line-through': cart.total !== cart.final_total }">
                   {{ cart.total }}
                 </td>
               </tr>
@@ -281,8 +281,8 @@
       </div>
       <!-- 表單驗證開始 -->
       <div class="container px-md-0">
-        <div class=" d-flex flex-column align-items-center mb-2 border border-1 border-dark information mx-auto" style="width: 100%;">
-          <div class="information-title text-center p-2 bg-dark text-white w-100 fs-md">填寫資訊</div>
+        <div class=" d-flex flex-column align-items-center mb-2 border border-1 border-dark information mx-auto rounded-3" style="width: 100%;">
+          <div class="information-title text-center p-2 bg-dark text-white w-100 fs-md rounded-top">填寫資訊</div>
           <VForm ref="form" class="p-4" style="width: 100%;" v-slot="{ errors }">
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
@@ -407,6 +407,7 @@ localize('zh_TW', {
     integer: '須為整數'
   }
 })
+
 export default {
   data () {
     const date = new Date()

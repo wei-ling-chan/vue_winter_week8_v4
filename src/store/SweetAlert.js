@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import Swal from 'sweetalert2'
+
 export default defineStore('ErrorAlert', {
   actions: {
     showSuccessAlert (response) {

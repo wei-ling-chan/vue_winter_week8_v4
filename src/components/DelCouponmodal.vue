@@ -31,6 +31,7 @@ import Modal from 'bootstrap/js/dist/modal'
 import { mapActions } from 'pinia'
 import SweetAlert from '@/store/SweetAlert.js'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   props: ['coupon', 'getCoupons'],
   data () {

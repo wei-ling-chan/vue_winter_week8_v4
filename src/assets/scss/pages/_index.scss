@@ -85,7 +85,6 @@
         margin-top: 8%;
       }
     }
-
     .button{
       width: 90%;     
       padding: 5%;
@@ -207,19 +206,20 @@
       .img-hover{
         .bg-1{
           margin-right: auto;
-          background-image: url(../img/prodduct-catena-1.png);            
+          background-image: url(../img/prodduct-catena-1.png);                    
         }
         .bg-2{
           margin-left: auto;
-          background-image: url(../img/prodduct-catena-2.png);            
+          background-image: url(../img/prodduct-catena-2.png);  
+                 
         }
         .bg-3{
           margin-right: auto;
-          background-image: url(../img/prodduct-catena-3.png);            
+          background-image: url(../img/prodduct-catena-3.png);           
         }
         .bg-4{
          margin-left: auto;
-          background-image: url(../img/prodduct-catena-4.png);            
+          background-image: url(../img/prodduct-catena-4.png);                    
         }
         &:hover{   
           overflow: hidden;       

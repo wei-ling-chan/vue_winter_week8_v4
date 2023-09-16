@@ -56,14 +56,13 @@
                   </tr>
                   <tr>
                     <th>下單時間</th>
-                     <!-- filter -->
-                    <td>{{formattedDate(tempOrder.create_at, 'yyyy-MM-dd')}}</td>
+                    <td>{{ formattedDate(tempOrder.create_at, 'yyyy-MM-dd') }}</td>
                   </tr>
                   <tr>
                     <th>付款時間</th>
                     <td>
                       <span v-if="tempOrder.paid_date">
-                        {{ formattedDate(tempOrder.paid_date, 'yyyy-MM-dd')}}
+                        {{ formattedDate(tempOrder.paid_date, 'yyyy-MM-dd') }}
                       </span>
                       <span v-else>時間不正確</span>
                     </td>
@@ -80,7 +79,6 @@
                   <tr>
                     <th>總金額</th>
                     <td>
-                      <!-- filter -->
                       {{ tempOrder.total }}
                     </td>
                   </tr>
@@ -97,9 +95,7 @@
                       {{ item.product.title }}
                     </th>
                     <td>{{ item.qty }} / {{ item.product.unit }}</td>
-                    <td class="text-end">
-                      {{  }}
-                    </td>
+                    <td class="text-end" />
                   </tr>
                 </tbody>
               </table>
@@ -144,6 +140,7 @@
 
 <script>
 import Modal from 'bootstrap/js/dist/modal'
+
 export default {
   props: ['order'],
 

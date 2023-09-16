@@ -36,7 +36,7 @@
                 <li class="nav-item me-md-0 me-0 my-2">
                   <RouterLink to="/cart" class="nav-link pe-0">
                     <i class="bi bi-cart-fill"></i>
-                    <span class="badge rounded-circle cart-badge rounded-pil fs-18" v-if="cartsLength>0">{{cartsLength}}</span>
+                    <span class="badge rounded-circle cart-badge rounded-pil fs-18" v-if="cartsLength>0">{{ cartsLength }}</span>
                   </RouterLink>
                 </li>
               </ul>
@@ -86,13 +86,13 @@
       </div>
     </footer>
   </div>
-
 </template>
 
 <script>
 import { mapState } from 'pinia'
 import cartStore from '../store/cartStore'
 import Collapse from 'bootstrap/js/dist/collapse'
+
 export default {
   data () {
     return {

@@ -48,6 +48,7 @@ import DelCouponmodal from '@/components/DelCouponmodal.vue'
 import { mapActions } from 'pinia'
 import SweetAlert from '@/store/SweetAlert.js'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   data () {
     return {

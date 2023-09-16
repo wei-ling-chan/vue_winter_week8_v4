@@ -66,7 +66,7 @@
                   <div class="input-group" style="width: 180px;">
                     <button
                       class="btn btn-outline-secondary rounded-start px-2"
-                      type="button" @click.prevent="reproductQty(-1)">
+                      type="button" @click.prevent="reproductQty(-1)" :class="{disabled:this.isProductQty}">
                       <i class="bi bi-dash-lg"></i>
                     </button>
                     <input
@@ -84,8 +84,8 @@
             </div>
           </div>
         </section>
-        <section class="customer-notice container-fluid p-3 p-md-4 my-md-8 my-6">
-          <div class=" border border-1 border-dark p-3 p-md-4 fs-6">
+        <section class="customer-notice container-fluid p-3 p-md-4 my-md-8 my-6 rounded">
+          <div class=" border border-1 border-dark p-3 p-md-4 fs-6 rounded">
             <p class="h5 text-center mb-4 fs-5 fw-bold">客戶須知:</p>
             <ol class="ps-md-4">
               <li class="py-2">線上訂購預約時間：如果您透過線上訂購進行當日預約，請預留約20分鐘的時間，我們將為您準備好餐點，以確保順利取餐。</li>
@@ -142,7 +142,7 @@
                         </a>
                       </div>
                       <div class="d-flex justify-content-between align-items-center">
-                        <div class="card-text text-md end tasty-item-price text-info fs-6">特價NT$&nbsp;{{ item.price }}</div>
+                        <div class="card-text text-md end tasty-item-price text-info fs-6">NT$&nbsp;{{ item.price }}</div>
                         <div class="card-text text-dark text-md end fs-7 text-subPrice">&nbsp;
                           <span class="text-decoration-line-through"> NT$ {{ item.origin_price }}</span>
                         </div>
@@ -189,6 +189,7 @@ import 'swiper/css/autoplay'
 import { mapActions } from 'pinia'
 import cartStore from '../../store/cartStore.js'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   data () {
     return {
@@ -199,6 +200,7 @@ export default {
         qty: 1
       },
       favorites: [],
+      isProductQty: true,
       // loding css
       color: '#9cd020',
       isLoading: false,
@@ -275,6 +277,11 @@ export default {
         // 使用 $nextTick 方法確保下拉選單已經渲染完畢再設定值
         this.$nextTick(() => {
           this.product.qty = this.product.qty || 1
+          if (this.product.qty > 1) {
+            this.isProductQty = false
+          } else {
+            this.isProductQty = true
+          }
         })
       },
       deep: true

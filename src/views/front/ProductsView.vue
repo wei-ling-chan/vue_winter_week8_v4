@@ -128,7 +128,7 @@
                           </a>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                          <div class="card-text text-md end tasty-item-price text-info fs-6">特價NT$&nbsp;{{ product.price }}</div>
+                          <div class="card-text text-md end tasty-item-price text-info fs-6">NT$&nbsp;{{ product.price }}</div>
                           <div class="card-text text-dark text-md end fs-7 text-subPrice">&nbsp;
                             <span class="text-decoration-line-through"> NT$ {{ product.origin_price }}</span>
                           </div>
@@ -166,6 +166,7 @@ import 'vue-loading-overlay/dist/css/index.css'
 import { mapActions } from 'pinia'
 import cartStore from '@/store/cartStore.js'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
+
 export default {
   data () {
     return {
@@ -197,7 +198,7 @@ export default {
     Loading
   },
   methods: {
-    testItems (category) {
+    filterItem (category) {
       this.$http.get(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/products/all`)
         .then((res) => {
           this.isfilter = false
@@ -292,7 +293,7 @@ export default {
   },
   mounted () {
     this.doAjax()
-    this.testItems('category')
+    this.filterItem('category')
     window.addEventListener('scroll', this.setMenuFixed)
     this.favorites = JSON.parse(localStorage.getItem('favorites')) || []
     this.heartClass()
