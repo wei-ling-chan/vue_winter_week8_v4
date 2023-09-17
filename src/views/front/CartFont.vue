@@ -473,8 +473,8 @@ export default {
       this.$http.post(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/order`, orderData)
         .then(res => {
           this.$router.push(`/checkOrder/${res.data.orderId}`)
-          this.$refs.form.resetForm()
           this.orderinfo()
+          this.$refs.form.resetForm()
         })
         .catch((err) => {
           if (err) {
@@ -495,14 +495,13 @@ export default {
     updateIsOut () {
       if (this.$refs.inOut.value === '內用') {
         this.isOut = false
+        this.payMethos.inOrOut = this.$refs.inOut.value
       } else if (this.$refs.inOut.value === '外帶') {
         this.isOut = true
+        this.payMethos.inOrOut = this.$refs.inOut.value
       }
     },
     orderinfo () {
-      // 選擇內用或外帶
-      this.payMethos.inOrOut = this.$refs.inOut.value
-
       // 預計外帶取餐時間
       if (this.payMethos.inOrOut === '外帶') {
         const value = this.$refs.myInput.value
@@ -510,7 +509,6 @@ export default {
       }
       // 付款方式
       this.payMethos.payBy = this.$refs.payInput.value
-
       // 取單號
       this.payMethos.orderCount = this.payMethos.orderCount + 1
       const payMethosStr = JSON.stringify(this.payMethos)
