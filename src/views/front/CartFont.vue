@@ -474,9 +474,7 @@ export default {
         .then(res => {
           this.$router.push(`/checkOrder/${res.data.orderId}`)
           this.$refs.form.resetForm()
-          console.log(888)
           this.orderinfo()
-          console.log(999)
         })
         .catch((err) => {
           if (err) {
@@ -504,21 +502,19 @@ export default {
     orderinfo () {
       // 選擇內用或外帶
       this.payMethos.inOrOut = this.$refs.inOut.value
-      console.log(111)
+
       // 預計外帶取餐時間
       if (this.payMethos.inOrOut === '外帶') {
         const value = this.$refs.myInput.value
         this.payMethos.payTime = value
-        console.log(222)
       }
       // 付款方式
       this.payMethos.payBy = this.$refs.payInput.value
-      console.log(333)
+
       // 取單號
       this.payMethos.orderCount = this.payMethos.orderCount + 1
       const payMethosStr = JSON.stringify(this.payMethos)
       localStorage.setItem('order', payMethosStr)
-      console.log(444)
     }
   },
   mounted () {
