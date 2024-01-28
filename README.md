@@ -28,8 +28,17 @@ https://wei-ling-chan.github.io/vue_winter_week8_v4/#/
 * Vue3+vite
 * VueRouter
 * Pinia
-* JavaScript ES6
-* Eslint
+* JavaScript ES6* 
 * Bootstrap
 
 ## 使用 Plugin
+
+* bootstrap-icons
+* sweetalert2
+* swiper
+* v-calendar
+* Vee-validate
+* vue-loading-overlay
+* vue-axios
+* Eslint
+* prettier
