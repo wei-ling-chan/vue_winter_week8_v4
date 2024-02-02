@@ -83,7 +83,7 @@ const routes = [
   },
   // 重新導向
   {
-    path: '/AboutView.vue/:pathMatch(.*)*',
+    path: '/about/:pathMatch(.*)*',
     redirect: {
       name: 'Home'
     }
@@ -92,7 +92,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  linkActiveClass: 'router-link-exact-active router-link-active', // 'active',
+  linkActiveClass: 'router-link-exact-active router-link-active', // 'active'
   routes
 })
 

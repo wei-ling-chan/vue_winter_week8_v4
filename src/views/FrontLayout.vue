@@ -68,7 +68,10 @@
               <RouterLink to="/products" class="me-3 text-decoration-none">美味專區</RouterLink>
             </li>
             <li>
-              <RouterLink to="/news" class="text-decoration-none">最新消息</RouterLink>
+              <RouterLink to="/news" class="text-decoration-none me-3">最新消息</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/login" class="text-decoration-none">後臺管理</RouterLink>
             </li>
           </ul>
           <ul class="contact-icon d-flex justify-content-end">

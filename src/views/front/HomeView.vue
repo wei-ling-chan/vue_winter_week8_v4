@@ -363,7 +363,7 @@
               </SwiperSlide>
               <SwiperSlide class="h-100 pb-4">
                 <RouterLink to="/news" class="me-3 text-decoration-none">
-                  <div class="card  p-4 pb-0 rounded-0"
+                  <div class="card p-4 pb-0 rounded-4"
                     style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
                     <img src="@/assets/img/news-pic4.jpg"
                       class="card-img-top " alt="南洋叻沙雞肉湯麵"
