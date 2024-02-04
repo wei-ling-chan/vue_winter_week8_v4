@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import { mapActions } from 'pinia'
+import SweetAlert from '@/store/SweetAlert.js'
 import AdminOrdermodal from '@/components/AdminOrdermodal.vue'
 import DelOrdermodal from '@/components/DelOrdermodal.vue'
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env
@@ -87,8 +89,9 @@ export default {
           this.adminOrders = res.data.orders
           this.formattedDate()
         })
-        .catch((err) => {
-          alert(err.response.data.message)
+        .catch((error) => {
+          // alert(err.response.data.message)
+          this.showErrorAlert(error)
         })
     },
     updatePaid (adminOrder) {
@@ -99,7 +102,7 @@ export default {
         data: this.paid
       })
         .then((res) => {
-          alert(res.data.message)
+          this.showSuccessAlert(res)
           this.orderComponent.hideModal()
           this.getAdminOrders()
         })
@@ -107,12 +110,12 @@ export default {
     delAdminOrder () {
       this.$http.delete(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/admin/order/${this.tempOrder.id}`)
         .then(res => {
-          alert(res.data.message)
+          this.showSuccessAlert(res)
           this.delorderComponent.hideModal()
           this.getAdminOrders()
         })
         .catch((err) => {
-          alert(err.response.data.message)
+          this.showErrorAlert(err)
         })
     },
     openModal (item) {
@@ -134,7 +137,8 @@ export default {
       return date.toLocaleDateString(undefined, {
         dateFormat: format
       })
-    }
+    },
+    ...mapActions(SweetAlert, ['showSuccessAlert', 'showErrorAlert'])
   },
   mounted () {
     // 取出token
