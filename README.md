@@ -43,4 +43,49 @@ https://wei-ling-chan.github.io/vue_winter_week8_v4/#/
 * Eslint
 * prettier
 
-* ## 前端頁面介紹
+## 前端頁面介紹
+
+* ### 首頁 Banner
+https://github.com/wei-ling-chan/vue_winter_week8_v4/assets/66425128/06e196da-81c0-410d-bf62-6dc4b42c2e55
+
+### 關於我們
+![首頁](https://i.imgur.com/LNUAsAG.png)
+
+### 美味專區
+https://github.com/wei-ling-chan/vue_winter_week8_v4/assets/66425128/696aecf8-4ed7-4598-90b4-84662739197e
+
+### 美味專區-詳細頁面
+![美味專區-詳細頁面](https://i.imgur.com/E1bMlC4.png)
+
+### 最新消息
+![最新消息](https://i.imgur.com/4tc5QH4.png)
+
+### 我的收藏
+![我的收藏](https://i.imgur.com/p83JcIZ.png)
+
+### 購物車
+![購物車](https://i.imgur.com/p83JcIZ.png)
+
+### 購物車-填寫訂單
+![購物車-填寫訂單](https://i.imgur.com/Ov8tnbI.png)
+
+### 購物車-完成訂單
+![購物車-完成訂單](https://i.imgur.com/gUsie0E.png)
+
+### 後台產品頁
+![後台產品頁](https://i.imgur.com/fJePEh8.png)
+
+## 開發時程
+- 設計稿繪製 - 6 小時
+- #### 前台
+- 首頁開發 - 80 小時
+- 關於我們頁 - 5 小時
+- 美味專區頁 - 48 小時
+- 我的收藏頁 - 6 小時
+- 購物車 - 24 小時
+- #### 後台
+- 後臺登入 - 2 小時
+- 後臺產品頁 - 16 小時
+
+
+
