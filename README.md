@@ -44,3 +44,8 @@ https://wei-ling-chan.github.io/vue_winter_week8_v4/#/
 * prettier
 
 * ## 前端頁面介紹
+
+* ### 首頁 Banner
+* ![Banner](https://imgur.com/8GpO5nt)
+
+
